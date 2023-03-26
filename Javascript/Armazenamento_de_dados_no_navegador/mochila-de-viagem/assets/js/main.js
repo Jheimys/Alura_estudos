@@ -4,12 +4,15 @@
     const nome = document.querySelector('#nome')
     const quantidade = document.querySelector('#quantidade')
     const lista = document.querySelector('#lista')
+    const itens = []
     
     form.addEventListener('submit', (evento) => {
         evento.preventDefault()
         const nomeInput = nome.value
         const quantidadeInput = quantidade.value
         criaElemento (nomeInput, quantidadeInput)
+        nome.value = ''
+        quantidade.value = ''
     })
 
     function criaElemento (nomeInput, quantidadeInput) {
@@ -25,6 +28,16 @@
         novoItem.innerHTML += nomeInput
 
         lista.appendChild(novoItem)
+
+        const itemAtual = {
+            'nome': nomeInput,
+            'quantidade': quantidadeInput
+        }
+
+        itens.push(itemAtual)
+
+        localStorage.setItem('item', JSON.stringify(itens))
+       
 
     }
 
