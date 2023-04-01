@@ -1,0 +1,35 @@
+pre{font-size: 1.2rem;}
+
+body{
+    overflow-y: hidden;
+}
+
+.row{
+    padding: 15px;
+}
+
+.cores-Brasil{
+    color: black;
+    background-color: red;
+}
+
+.cores-Pelotas {
+    color: blue;
+    background-color: yellow;
+}
+
+.cores-Farroupilha {
+    color: green;
+    background-color:#dbf2c4;
+}
+
+.container-torcedor{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;   
+}
+
+.container-torcedor img {
+    width: 100%;
+    height: 90%;
+}
