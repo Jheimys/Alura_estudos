@@ -70,4 +70,45 @@
         }
     })
 
+    frm.btGravar.addEventListener('click', () => {
+        
+        const tarefas = document.querySelectorAll('h5')
+
+        if(tarefas.length == 0) {
+            alert('Não há tarefas para serem salvas')
+            return
+        } 
+
+        let dados = ''
+
+        tarefas.forEach(tarefa => {
+            dados += tarefa.innerText + ';'
+            console.log(dados)
+        })
+
+        localStorage.setItem('tarefasDia', dados.slice(0,-1))
+
+        if(localStorage.getItem('tarefasDia')){
+            alert('Ok! Tarefas salvas')
+        }
+
+    })
+
+    window.addEventListener('load', () => {
+
+        if(localStorage.getItem('tarefasDia')) {
+            const dados = localStorage.getItem('tarefasDia').split(';')
+            //console.log(dados)
+
+            dados.forEach(dado => {
+                const h5 = document.createElement('h5')
+                const texto = document.createTextNode(dado)
+
+                h5.appendChild(texto)
+                dvQuadrado.appendChild(h5)
+            })
+        }
+    })
+
 })()
+
