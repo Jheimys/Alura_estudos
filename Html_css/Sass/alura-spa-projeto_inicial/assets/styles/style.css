@@ -13,4 +13,7 @@ nav ul li a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
+}
+nav ul li a:hover {
+  border-bottom: 2px solid #74959A;
 }/*# sourceMappingURL=style.css.map */
