@@ -152,5 +152,35 @@ footer {
   background: linear-gradient(to left, #485371, #74959A, #F1E0AC, #485371);
 }
 footer i {
-  color: red;
+  color: pink;
+}
+
+#images {
+  margin: 2rem;
+}
+#images .pedra-e-flor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#images h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 1rem;
+  color: #74959A;
+  font-weight: 500;
+}
+#images h4 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+#images p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #485371;
+  line-height: 1.25rem;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
