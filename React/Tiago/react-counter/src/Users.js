@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import Header from './Header'
+
 
 const Users = () => {
 
@@ -14,7 +16,8 @@ const Users = () => {
 
     return(
         <>
-            <h1>users</h1>
+            <Header title='Usuários'/>
+        
             {
                 users.map(user => {
                     return(

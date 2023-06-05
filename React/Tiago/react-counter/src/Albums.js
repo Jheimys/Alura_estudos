@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Header from'./Header'
 
 const Albums = () => {
 
@@ -14,7 +15,7 @@ const Albums = () => {
 
     return(
         <>
-            <h1>Álbuns</h1>
+            <Header title='Albuns'/>
 
             {
                 albums.map(album => {
