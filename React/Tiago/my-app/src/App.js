@@ -13,14 +13,14 @@ function App() {
     <TemplateDefault>
       <Router>
         <Switch>
-          <Route path="/customers">
+          <Route exact path="/customers">
             <Customers />
           </Route>
         </Switch>
       </Router>
       <Router>
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
         </Switch>
