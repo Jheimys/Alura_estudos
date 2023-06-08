@@ -5,17 +5,27 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home";
-
+import Customers from "./pages/Customers"
+import TemplateDefault from "./templates/Default"
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+    <TemplateDefault>
+      <Router>
+        <Switch>
+          <Route path="/customers">
+            <Customers />
+          </Route>
+        </Switch>
+      </Router>
+      <Router>
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
+    </TemplateDefault>
   );
 }
 

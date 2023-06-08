@@ -5,18 +5,9 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-// import {makeStyles} from '@mui/material/styles';
-
-// const useStyle = makeStyles (() => ({
-//     title: {
-//         flexGrow: 1,
-//     }
-// }))
-
 
 const Header = () => {
 
-    // const classes = useStyle()
 
     return(
         <AppBar position="static">
@@ -34,7 +25,6 @@ const Header = () => {
 
                 </IconButton>
                 
-                {/* className={classes.title}  */}
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>  
                   My App
                 </Typography>
