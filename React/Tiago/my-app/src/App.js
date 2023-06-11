@@ -7,25 +7,27 @@ import {
 import Home from "./pages/Home";
 import Customers from "./pages/Customers"
 import TemplateDefault from "./templates/Default"
+import TemplatePage from "./templates/Page"
 
 function App() {
   return (
-    <TemplateDefault>
-      <Router>
+    <Router>
+      <TemplateDefault>
         <Switch>
-          <Route exact path="/customers">
-            <Customers />
+
+          {/* Rota de Customers */}
+          <Route  path="/customers">
+            <TemplatePage title="Clienets" Component={Customers} />
           </Route>
-        </Switch>
-      </Router>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home />
+
+          {/* Rota da Home */}
+          <Route  path="/">
+          <TemplatePage title="Página inícial" Component={Home}/>
           </Route>
+
         </Switch>
-      </Router>
-    </TemplateDefault>
+      </TemplateDefault>
+    </Router>
   );
 }
 
