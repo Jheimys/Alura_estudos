@@ -28,6 +28,7 @@ const Header = () => {
     }
 
     const handleMenuClick = route => {
+        handleToggleMenu()
         history.push(route)
     }
 

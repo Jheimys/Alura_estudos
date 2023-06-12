@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import'./index.css'
+import App from './App';
+
+
 import { createTheme, ThemeProvider} from '@mui/material/styles';
 import {blue} from '@mui/material/colors';
-
-import App from './App';
-import'./index.css'
-
 
 
 const theme = createTheme({
@@ -14,13 +14,13 @@ const theme = createTheme({
   },
 });
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
        <App />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
+
 

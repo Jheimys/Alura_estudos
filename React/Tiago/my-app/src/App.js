@@ -17,7 +17,7 @@ function App() {
 
           {/* Rota de Customers */}
           <Route  path="/customers">
-            <TemplatePage title="Clienets" Component={Customers} />
+            <TemplatePage title="Client" Component={Customers} />
           </Route>
 
           {/* Rota da Home */}
