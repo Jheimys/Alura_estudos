@@ -5,9 +5,10 @@ import {
 } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Customers from "./pages/Customers"
+import CustomersList from "./pages/Customers/List"
 import TemplateDefault from "./templates/Default"
 import TemplatePage from "./templates/Page"
+import CustomersRegister from "./pages/Customers/Register"
 
 function App() {
   return (
@@ -15,14 +16,20 @@ function App() {
       <TemplateDefault>
         <Switch>
 
+          {/* Rota de adicionar clinetes */}
+          <Route  path="/customers/add">
+            <TemplatePage title="Cadastro de clientes" Component={CustomersRegister} />
+          </Route>
+
           {/* Rota de Customers */}
           <Route  path="/customers">
-            <TemplatePage title="Cliente" Component={Customers} />
+            <TemplatePage title="Lista de clientes" Component={CustomersList} />
           </Route>
+
 
           {/* Rota da Home */}
           <Route  path="/">
-          <TemplatePage title="Página inícial" Component={Home}/>
+          <TemplatePage title="Página inicial" Component={Home}/>
           </Route>
 
         </Switch>
