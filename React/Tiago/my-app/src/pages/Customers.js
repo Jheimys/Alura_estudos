@@ -20,8 +20,12 @@ const Customers = () => {
             })
     },[])
 
-    const handleRemoveCustomer = () => {
-        alert('ok, remover customers')
+    const handleRemoveCustomer = id => {
+        axios.delete(`https://reqres.in/api/users/${id}`)
+            .then(response => console.log(response))
+        
+        const newCustomersStates = customers.filter( customer => customer.id !== id)
+        setCustomers(newCustomersStates )
     }
 
     return(

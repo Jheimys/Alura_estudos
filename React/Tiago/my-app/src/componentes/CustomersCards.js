@@ -32,8 +32,8 @@ const CustomersCard = ({
         setOpenModal(!openModal)
     }
 
-    const handelComfirm = () => {
-        onRemoveCustomer()
+    const handelComfirm = id => {
+        onRemoveCustomer(id)
     }
 
     const handleRemoveCustomer = () => {
@@ -69,7 +69,7 @@ const CustomersCard = ({
         <ModalConfirm
             open={openModal}
             onClose={handleToggleModal}
-            onConfirm={handelComfirm} 
+            onConfirm={() => handelComfirm(id)} 
             title='Deseja realmente cancelar esse cadastro?'
             message='Ao confirmar não será possível reverter essa operação.'
         />
