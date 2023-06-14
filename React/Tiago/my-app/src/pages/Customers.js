@@ -7,21 +7,8 @@ import Grid from '@mui/material/Grid'
 
 import CustomersCard from "../componentes/CustomersCards"
 
-// const useStyles = styled(Paper)(({ theme }) => ({
-//      backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//      ...theme.typography.body2,
-//     padding: theme.spacing(1),
-//     textAlign: 'center',
-//      color: theme.palette.text.secondary,
-//      card: {
-//         paddind: theme.spacing(2),
-//      }
-//   }));
-
 
 const Customers = () => {
-
-    // const classes = useStyles()
 
     const [customers, setCustomers] = useState([])
 
@@ -33,16 +20,22 @@ const Customers = () => {
             })
     },[])
 
+    const handleRemoveCustomer = () => {
+        alert('ok, remover customers')
+    }
+
     return(
          <Grid container >
             {
                 customers.map(item => (
                     <Grid item xs={12} md={4} sx={{padding:'2px'}}   key={item.id}>
                         <CustomersCard 
+                            id={item.id}
                             name={item.first_name}
                             lastname={item.last_name}
                             email={item.email}
                             avatar={item.avatar}
+                            onRemoveCustomer={handleRemoveCustomer}
                         />
                     </Grid>
                 ))
