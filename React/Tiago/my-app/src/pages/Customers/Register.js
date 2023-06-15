@@ -3,6 +3,7 @@ import axios from 'axios';
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import Toasty from '../../componentes/Toasty';
 //import { RemoveFromQueue } from '@mui/icons-material';
 
 
@@ -18,6 +19,8 @@ const Registe = () => {
             error:false,
         },
     })
+
+    const [openToasty, setOpenToasty] = useState(false)
 
    
     const handleInputChange = (e) => {
@@ -71,7 +74,7 @@ const Registe = () => {
             name: form.name.value,
             job: form.job.value,
         }).then((response) => {
-            console.log('ok', response)
+            setOpenToasty(true)
         })
 
      
@@ -105,6 +108,11 @@ const Registe = () => {
 
                 <Button sx={{width:'150px'}} variant="contained" onClick={handleRegisterButton}>Cadastrar</Button>
         
+                <Toasty 
+                    open={openToasty} 
+                    severity='success' 
+                    text='Cadastro realizado com sucesso!'
+                    onClose={() => setOpenToasty(false)} />
             </Stack>
 
 
