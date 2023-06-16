@@ -9,12 +9,18 @@ import CustomersList from "./pages/Customers/List"
 import TemplateDefault from "./templates/Default"
 import TemplatePage from "./templates/Page"
 import CustomersRegister from "./pages/Customers/Register"
+import CustomersEdit from "./pages/Customers/Edit"
 
 function App() {
   return (
     <Router>
       <TemplateDefault>
         <Switch>
+
+           {/* Rota de editar clintes */}
+           <Route  path="/customers/edit/:id">
+            <TemplatePage title="Editar cliente" Component={CustomersEdit} />
+          </Route>
 
           {/* Rota de adicionar clinetes */}
           <Route  path="/customers/add">
