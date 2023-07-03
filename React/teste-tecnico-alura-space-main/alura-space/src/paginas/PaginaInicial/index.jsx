@@ -1,5 +1,6 @@
 import Cabecalho from "../../componentes/Cabecalho";
 import Menu from "../../componentes/Menu";
+import Rodape from "../../componentes/Rodape";
 
 import styles from "./PaginaInicial.module.scss"
 
@@ -18,7 +19,7 @@ export default function PaginaInicial() {
                         <img src={banner} alt="imagem da terra vista do espaço" />
                     </div>
                 </section>
-
+                <Rodape />
             </main>
         </>
     )
