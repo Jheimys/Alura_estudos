@@ -12,7 +12,7 @@ export default function PostCard({ post }){
                     alt='Imagem de capa do post'
                 />
 
-                <h2 className={post.titulo}>{post.titulo}</h2>
+                <h2 className={styles.titulo}>{post.titulo}</h2>
                 
                 <BotaoPrincipal>
                     Ler

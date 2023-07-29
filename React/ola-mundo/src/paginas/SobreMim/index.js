@@ -3,7 +3,7 @@ import PostModelo from "componentes/PostModelo";
 import styles from './SobreMim.module.css'
 
 import fotoCapa from 'assets/sobre_mim_capa.png'
-import fotoSobreMim from 'assets/sobre_mim_foto.png'
+import fotoSobreMim from 'assets/projTa.jpeg'
 
 export default function SobreMim() {
     return(
@@ -22,28 +22,23 @@ export default function SobreMim() {
             />
 
             <p className={styles.paragrafo}>
-                 Oi, tudo bem? Eu sou instrutor de Front-end na Alura e estou feliz de te ver por aqui.
+                Possuo mais de 10 anos de experiência em coordenação de equipe e ensino de matemática.
+                Tenho dois bacharelados, um em Sistema de Informação, e outro em Matemática, área na qual
+                também sou mestre pela Universidade Federal do Espírito Santo. Sou casado, pai de dois filhos, e em
+                meu tempo livre, além de aproveitar com minha família, eu pratico música e frequento um dojo de jiujitsu.
             </p>
 
             <p className={styles.paragrafo}>
-                Minha história com programação começou no Instituto Federal do Piauí (IFPI), quando fiz o ensino médio integrado ao curso de Informática. Eu aprendi lógica de programação e o básico de várias linguagens, como PHP, Python, Java, mas sem aprofundar muito em cada uma delas. Eu gostava muito de estudar programação, mas na época não fazia ideia de que trabalharia com isso hoje.
+                Sou um entusiasta por novas tecnologias e possuo conhecimentos avançados em JavaScript e suas
+                diversas frameworks, tanto de front-end como de back-end. Minha principal stack de atuação é Node
+                com React.
             </p>
 
             <p className={styles.paragrafo}>
-                No ensino superior, escolhi cursar Engenharia Elétrica na Universidade Federal do Piauí (UFPI). Lá eu consegui entrar no PET (Programa de Educação Tutorial), um grupo acadêmico que contribui de diversas formas para o curso. Lá eu tive a oportunidade de estudar desenvolvimento web para ser um dos mantenedores do site deles. 
-            </p>
-
-            <p className={styles.paragrafo}>
-                Com isso tive minha experiência de dev mais próxima da realidade, com prazos de implementação para o site, e aprendi muito enquanto codificava.
-
-            </p>
-
-            <p className={styles.paragrafo}>
-                E foi enquanto eu estava no PET que decidi procurar um estágio em desenvolvimento web. Eu encontrei uma vaga na Alura para o Scuba Team e percebi que ela aliava duas paixões minhas: programação e educação. Para minha felicidade, fui escolhido para fazer parte do time.
-            </p>
-
-            <p className={styles.paragrafo}>
-                Desde então, tem sido aprenas aprendizados atrás de aprendizados. A Alura é uma escola não só para seus alunos e alunas, mas também para os colaboradores e colaboradoras. Hoje sou muito feliz de ter a oportunidade de trazer esses conteúdos ricos e encantadores para você. Espero que aprenda bastante!
+                Destaco, ainda, que minha experiência como coordenador de equipe e professor de matemática me ajudou a desenvolver habilidades 
+                como liderança, comunicação e gestão de projetos. Possuo uma visão estratégica para enfrentar desafios e
+                encontrar soluções inovadoras. Acredito que minha combinação de habilidades e experiências agregam
+                um valor significativo aos projetos em que trabalho.    
             </p>
 
        </PostModelo>

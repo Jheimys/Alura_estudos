@@ -1,7 +1,7 @@
 import styles from './Banner.module.css'
 
 import circuloColorido from 'assets/circulo_colorido.png'
-import minhaFoto from 'assets/minha_foto.png'
+import minhaFoto from 'assets/avatar2-removebg.png'
 
 export default function Banner() {
     return(
@@ -12,7 +12,7 @@ export default function Banner() {
                 </h1>
 
                 <p className={styles.paragrafo}>
-                    Boas vindas ao meu espaço pessoal! Eu sou James Bassani...
+                    Boas vindas ao meu espaço pessoal! Eu sou James Bassani, desenvolvedor front-end com experiência em desenvolvimento web. Minhas principais tecnologias são: HTML, CSS, Javascript, NodeJS e React. Tenho grande interesse em expandir minhas habilidades e conhecimentos em tecnologias emergentes. Atualmente, além das tecnologias citadas a cima venho me dedicando ao SAB ABAP e a Data Science.
                 </p>
             </div>
 
