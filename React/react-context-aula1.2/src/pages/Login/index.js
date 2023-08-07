@@ -11,9 +11,13 @@ import {
 } from '@material-ui/core';
 
 import { useHistory } from 'react-router-dom';
+import { UsuarioContext } from 'common/context/Usuario';
+import { useContext } from 'react';
 
-function Login({ nome, setNome, saldo, setSaldo }) {
+function Login() {
 const history = useHistory()
+
+const { nome, setNome, saldo, setSaldo } = useContext(UsuarioContext)
 
   return (
     <Container>
@@ -25,7 +29,7 @@ const history = useHistory()
       <InputContainer>
         <InputLabel>
           Nome
-        </InputLabel>
+      </InputLabel>
         <Input
           type="text"
           value={nome}
@@ -37,6 +41,7 @@ const history = useHistory()
         <InputLabel>
           Saldo
         </InputLabel>
+          
           <Input
             value={saldo}
             onChange={(event) => setSaldo(event.target.value)}
@@ -49,13 +54,14 @@ const history = useHistory()
           />
         </InputContainer>
 
-      <Button
-        onClick={() => history.push('/feira')}
-        variant="contained"
-        color="primary"
-      >
-        Avançar
-      </Button>
+        <Button
+          onClick={() => history.push('/feira')}
+          variant="contained"
+          color="primary"
+        >
+          Avançar
+        </Button>
+        
     </Container>
   )
 };
