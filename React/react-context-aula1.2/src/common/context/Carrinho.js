@@ -14,30 +14,45 @@ export const CarrinhoProvaider = ({children}) =>{
 }
 
 export const useCarrinhoContext = () => {
-    const { carrinho, setCarrinho } = useContext(CarrinhoContext)
+  const { carrinho, setCarrinho } = useContext(CarrinhoContext)
 
-    function adicionarProduto(novoProduto){
-        const temOProduto = carrinho.some(itemDoCarrinho => itemDoCarrinho.id === novoProduto.id)
+  function mudarQuatidade(id, quantidade){
+    return carrinho.map(itemDoCarrinho => {
+      if(itemDoCarrinho.id === id) itemDoCarrinho.quantidade += quantidade
+      return itemDoCarrinho
+    })
+  }
+
+  function adicionarProduto(novoProduto){
+    const temOProduto = carrinho.some(itemDoCarrinho => itemDoCarrinho.id === novoProduto.id)
     
-        if(!temOProduto){
-          novoProduto.quantidade = 1
-          return(
-            setCarrinho(carrinhoAnterior => [...carrinhoAnterior, novoProduto])
-          )
-        }
-    
-        setCarrinho(carrinhoAnterior => carrinhoAnterior.map(itemDoCarrinho => {
-          if(itemDoCarrinho.id === novoProduto.id){
-            itemDoCarrinho.quantidade += 1
-          }
-          return itemDoCarrinho
-        }))
+      if(!temOProduto){
+        novoProduto.quantidade = 1
+        return(
+          setCarrinho(carrinhoAnterior => [...carrinhoAnterior, novoProduto])
+        )
       }
     
-
-    return{
-        carrinho,
-        setCarrinho,
-        adicionarProduto
+      setCarrinho(mudarQuatidade(novoProduto.id, 1))
     }
+
+  function removerProduto(id){
+    const produto = carrinho.find(itemDoCarrinho => itemDoCarrinho.id === id)
+    const ehOUltimo = produto.quantidade === 1
+    
+    if(ehOUltimo){
+      return setCarrinho(carrinhoAnterior => carrinhoAnterior.filter(itemDoCarrinho =>
+        itemDoCarrinho.id !== id))
+    }
+
+    setCarrinho(mudarQuatidade(id, -1))
+  }
+    
+
+  return{
+    carrinho,
+    setCarrinho,
+    adicionarProduto,
+    removerProduto
+  }
 }
