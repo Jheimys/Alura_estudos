@@ -58,6 +58,7 @@ const { nome, setNome, saldo, setSaldo } = useContext(UsuarioContext)
           onClick={() => history.push('/feira')}
           variant="contained"
           color="primary"
+          disabled = {nome.length < 3}
         >
           Avançar
         </Button>

@@ -19,12 +19,13 @@ export default function Router(){
                         <Route path="/feira">
                             <Feira />
                         </Route>
+
+                        <Route path="/carrinho">
+                            <Carrinho />
+                        </Route>
                     </CarrinhoProvaider>
-                </UsuarioProvider>
-                
-                <Route path="/carrinho">
-                    <Carrinho />
-                </Route>
+                    
+                </UsuarioProvider> 
             </Switch>
         </BrowserRouter>
     )
