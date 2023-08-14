@@ -17,18 +17,16 @@ export default function Router(){
                     </Route>
                     
                     <CarrinhoProvaider>
-                        <Route path="/feira">
-                            <Feira />
-                        </Route>
-
                         <PagamentoProvaider>
+                            <Route path="/feira">
+                                <Feira />
+                            </Route>
+                        
                             <Route path="/carrinho">
                                 <Carrinho />
                             </Route>
                         </PagamentoProvaider>
-
-                    </CarrinhoProvaider>
-                    
+                    </CarrinhoProvaider> 
                 </UsuarioProvider> 
             </Switch>
         </BrowserRouter>
