@@ -1,0 +1,5 @@
+C:\Users\User\workspace\Alura_estudos\C#\POO\ProgramaMusica\ProgramaMusica\obj\Debug\net8.0\ProgramaMusica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\workspace\Alura_estudos\C#\POO\ProgramaMusica\ProgramaMusica\obj\Debug\net8.0\ProgramaMusica.AssemblyInfoInputs.cache
+C:\Users\User\workspace\Alura_estudos\C#\POO\ProgramaMusica\ProgramaMusica\obj\Debug\net8.0\ProgramaMusica.AssemblyInfo.cs
+C:\Users\User\workspace\Alura_estudos\C#\POO\ProgramaMusica\ProgramaMusica\obj\Debug\net8.0\ProgramaMusica.csproj.CoreCompileInputs.cache
+C:\Users\User\workspace\Alura_estudos\C#\POO\ProgramaMusica\ProgramaMusica\obj\Debug\net8.0\ProgramaMusica.sourcelink.json
