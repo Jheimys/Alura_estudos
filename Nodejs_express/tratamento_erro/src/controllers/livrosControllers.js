@@ -14,18 +14,22 @@ class LivrosControllers {
 
   static async listaLivroPorId(req, res, next) {
     try {
-      const id = req.params.id;
-      const livroResultado  = await livro.findById(id);
+      const busca = await processaBusca(req.query);
+      
+      if (busca !== null) {
+        const livrosResultado = await livro
+          .find(busca)
+          .populate("autor"); 
 
-      if (livroResultado !== null) {
-        res.status(200).send(livroResultado);
+        res.status(200).send(livrosResultado);
       } else {
-        next(new NaoEncontrado("Id do livro não localizado."));
+        res.status(200).send([]);
       }
     } catch (error) {
       next(error);
     }
   }
+  
 
   static async cadastrarLivro(req, res, next) {
     const novoLivro = req.body;
@@ -79,17 +83,22 @@ class LivrosControllers {
     }
   }
 
-  static async listarLivrosPorFiltro(req, res, next) {
-   
+  static listarLivroPorFiltro = async (req, res, next) => {
     try {
       const busca = await processaBusca(req.query);
 
-      const livrosPorEditora = await livro.find(busca);
-      res.status(200).json(livrosPorEditora);
-    } catch (error) {
-      next(error);
+      if (busca !== null) {
+        const livrosResultado = await livro
+          .find(busca)
+          .populate("autor");
+        res.status(200).send(livrosResultado);
+      } else {
+        res.status(200).send([]);
+      }
+    } catch (erro) {
+      next(erro);
     }
-  }
+  };
 
 }
 
@@ -97,7 +106,7 @@ async function processaBusca(parametros){
 
   const { editora, nome, minPaginas, maxPaginas, nomeAutor } = parametros;
 
-  const busca = {};
+  let busca = {};
 
   if(editora) busca.editora = editora;
   if(nome) busca.nome = {$regex: nome, $options: "i"};
@@ -107,15 +116,28 @@ async function processaBusca(parametros){
   if(minPaginas) busca.pagina.$gte = minPaginas;
   if(maxPaginas) busca.pagina.$lte = maxPaginas; 
 
-  if(nomeAutor){
-    const autorBuscado = autor.findOne({ nome: nomeAutor });
+  if (nomeAutor) busca = { ...busca, "autor.nome": nomeAutor };
 
-    const autorId = autorBuscado._idS;
 
-    busca.autor = autorId;
-  }
+  // if(nomeAutor){
+
+  //   const autorBuscado = await autor.findOne({ nome: nomeAutor });
+
+  //   console.log("Autor buscado:", autorBuscado );
+
+  //   if(autorBuscado !== null){
+  //     busca.autor.nome = autorBuscado.nome;
+  //     //busca.autorBuscado = autorBuscado._id;
+
+  //     console.log("busca dentro do if autor buscado", busca.autor.nome);
+
+  //   } else {
+  //     busca = null;
+  //   }
+  // }
 
   return busca;
+
 }
 
 export default LivrosControllers;
