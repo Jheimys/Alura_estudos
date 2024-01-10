@@ -8,3 +8,13 @@ console.log(typeof firstName);
 
 let otherFirstName = "Bob";
 console.log( typeof otherFirstName);
+
+// -------------- TypeScript Special Types -----------------
+
+//(1) Type: any
+
+//(2) Type: unknown
+
+//(3) Type: never
+
+//(4) Type: undefined & null        
