@@ -34,9 +34,51 @@
       "data": "05/01/2023",
       "mes": "Janeiro",
       "id": 5
+    },
+    {
+      "transacao": "Transferência",
+      "valor": "80",
+      "data": "24/02/2024",
+      "mes": "Fevereiro",
+      "id": 6
+    },
+    {
+      "transacao": "Transferência",
+      "valor": "80",
+      "data": "24/02/2024",
+      "mes": "Fevereiro",
+      "id": 7
+    },
+    {
+      "transacao": "Transferência",
+      "valor": "80",
+      "data": "24/02/2024",
+      "mes": "Fevereiro",
+      "id": 8
+    },
+    {
+      "transacao": "Transferência",
+      "valor": "80",
+      "data": "25/02/2024",
+      "mes": "Fevereiro",
+      "id": 9
+    },
+    {
+      "transacao": "Transferência",
+      "valor": "80",
+      "data": "25/02/2024",
+      "mes": "Fevereiro",
+      "id": 10
+    },
+    {
+      "transacao": "Transferência",
+      "valor": "80",
+      "data": "25/02/2024",
+      "mes": "Fevereiro",
+      "id": 11
     }
   ],
   "saldo": {
-    "valor": 3750
+    "valor": -320
   }
 }
