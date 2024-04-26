@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-04-25T12:55:38.230Z",
+    "end": "2024-04-25T12:55:46.258Z",
+    "duration": 8028,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1e6f7189-110d-4188-bf95-0e654a059839",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login-incorreto.cy.ts",
+      "file": "cypress\\e2e\\login-incorreto.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "12359ce5-fc10-4eb2-bb73-7b3d3dfb72d6",
+          "title": "Página de login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verificar mensagens de campos obrigatórios",
+              "fullTitle": "Página de login Verificar mensagens de campos obrigatórios",
+              "timedOut": null,
+              "duration": 3286,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"http://localhost:4200/#/home\");\ncy.get('small').contains('User name is required!');\ncy.get('small').contains('Password is required!');",
+              "err": {},
+              "uuid": "6d5e5012-6977-4d0a-8c55-2765ae9d51f0",
+              "parentUUID": "12359ce5-fc10-4eb2-bb73-7b3d3dfb72d6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6d5e5012-6977-4d0a-8c55-2765ae9d51f0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3286,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

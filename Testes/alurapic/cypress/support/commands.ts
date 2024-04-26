@@ -12,8 +12,24 @@
 //
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
+
+interface CustomCommands {
+    login: (nome: string, senha: string) => void;
+}
+
+declare namespace Cypress {
+    interface Chainable<Subject> {
+        login: (nome: string, senha: string) => void;
+    }
+}
+
+Cypress.Commands.add('login', (nome, senha) => {
+    cy.get('[data-test="loginUserName"]').type(nome)
+    cy.get('[data-test="loginPassword"]').type(senha)
+    cy.contains('button', 'login').click()
+})
+
+
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 //
