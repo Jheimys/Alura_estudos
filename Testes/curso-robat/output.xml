@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.9 on win32)" generated="2024-05-04T15:52:09.886950" rpa="false" schemaversion="5">
+<suite id="s1" name="Primeiro Teste" source="C:\Users\User\workspace\Alura_estudos\Testes\curso-robat\primeiro_teste.robot">
+<test id="s1-t1" name="Abrir navegador e acessar o site do organo" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-04T15:52:11.433608" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
+<msg time="2024-05-04T15:52:15.938729" level="WARN">The chromedriver version (123.0.6312.86) detected in PATH at C:\Users\User\AppData\Local\Programs\Python\Python312\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.91 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>url=http://localhost:3000/</arg>
+<arg>browser=Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-04T15:52:11.431610" elapsed="13.286155"/>
+</kw>
+<status status="PASS" start="2024-05-04T15:52:11.425614" elapsed="13.328131"/>
+</test>
+<status status="PASS" start="2024-05-04T15:52:09.893947" elapsed="14.866796"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Primeiro Teste">Primeiro Teste</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-04T15:52:15.938729" level="WARN">The chromedriver version (123.0.6312.86) detected in PATH at C:\Users\User\AppData\Local\Programs\Python\Python312\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.91 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
