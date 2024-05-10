@@ -1,58 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.11.9 on win32)" generated="2024-05-08T14:36:43.951464" rpa="false" schemaversion="5">
-<suite id="s1" name="Preenchimento Incorreto" source="C:\Users\User\workspace\Alura_estudos\Testes\curso-robat\preenchimento_incorreto.robot">
-<test id="s1-t1" name="Verificar se quando um campo obrigatório não for preenchido corretamente o sistema exibe uma mensagem de campo obrigatório" line="11">
+<robot generator="Robot 7.0 (Python 3.11.9 on win32)" generated="2024-05-10T13:23:04.166652" rpa="false" schemaversion="5">
+<suite id="s1" name="Preenchimento Correto" source="c:\Users\User\workspace\Alura_estudos\Testes\curso-robat\preenchimento_correto.robot">
+<test id="s1-t1" name="Verificar se é possível criar mais de um card se preenchermos os campos corretamente" line="28">
 <kw name="Dado que eu acesse o Organo" owner="setup_teardown" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-05-08T14:36:44.506250" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
-<msg time="2024-05-08T14:36:45.410377" level="WARN">The chromedriver version (123.0.6312.86) detected in PATH at C:\Users\User\AppData\Local\Programs\Python\Python312\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.155 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T13:23:04.750583" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/'.</msg>
+<msg time="2024-05-10T13:23:06.673487" level="WARN">The chromedriver version (123.0.6312.86) detected in PATH at C:\Users\User\AppData\Local\Programs\Python\Python312\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.156); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>${URL}</arg>
 <arg>browser=Chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-05-08T14:36:44.505250" elapsed="5.293076"/>
+<status status="PASS" start="2024-05-10T13:23:04.749582" elapsed="8.673301"/>
 </kw>
-<status status="PASS" start="2024-05-08T14:36:44.502262" elapsed="5.296064"/>
+<status status="PASS" start="2024-05-10T13:23:04.747587" elapsed="8.676293"/>
 </kw>
-<kw name=" Dado que eu clique no botão &quot;Criar Card&quot;">
+<kw name="Dado que preencha os campos do formulário">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:13.442870" level="INFO">Typing text 'Akemi' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>Akemi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:13.440871" elapsed="0.684103"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:14.125973" level="INFO">Typing text 'Desenvolvedora' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>Desenvolvedora</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:14.124974" elapsed="0.383779"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:14.510752" level="INFO">Typing text 'https://picsum.photos/200/300' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>https://picsum.photos/200/300</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:14.509753" elapsed="0.423928"/>
+</kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-05-08T14:36:49.819316" level="INFO">Clicking element 'id:form-botao'.</msg>
+<msg time="2024-05-10T13:23:14.934679" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:14.934679" elapsed="1.482823"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:16.420496" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${OPCAO_PROGRAMACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:16.419499" elapsed="0.153984"/>
+</kw>
+<status status="PASS" start="2024-05-10T13:23:13.439871" elapsed="3.133612"/>
+</kw>
+<kw name="E clique no botão criar card">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:16.582469" level="INFO">Clicking element 'id:form-botao'.</msg>
 <arg>${BOTAO_CARD}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-08T14:36:49.818316" elapsed="0.197886"/>
+<status status="PASS" start="2024-05-10T13:23:16.579479" elapsed="0.245403"/>
 </kw>
-<status status="PASS" start="2024-05-08T14:36:49.816316" elapsed="0.200886"/>
+<status status="PASS" start="2024-05-10T13:23:16.576473" elapsed="0.249397"/>
 </kw>
-<kw name="Então sistema deve apresentar mensagem de campo obrigatório">
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-05-08T14:36:50.076167" level="INFO">Element 'id:form-nome-erro' is displayed.</msg>
-<arg>id:form-nome-erro</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-05-08T14:36:50.020200" elapsed="0.055967"/>
+<kw name="Então identificar 3 times no card esperado">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Dado que preencha os campos do formulário">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:16.839864" level="INFO">Typing text 'Akemi' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>Akemi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:16.838865" elapsed="0.849720"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-05-08T14:36:50.127138" level="INFO">Element 'id:form-cargo-erro' is displayed.</msg>
-<arg>id:form-cargo-erro</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-05-08T14:36:50.077170" elapsed="0.049968"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:17.690586" level="INFO">Typing text 'Desenvolvedora' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>Desenvolvedora</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:17.689583" elapsed="0.329557"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-05-08T14:36:50.171115" level="INFO">Element 'id:form-times-erro' is displayed.</msg>
-<arg>id:form-times-erro</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-05-08T14:36:50.128139" elapsed="0.042976"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:18.021137" level="INFO">Typing text 'https://picsum.photos/200/300' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>https://picsum.photos/200/300</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:18.020139" elapsed="0.354796"/>
 </kw>
-<status status="PASS" start="2024-05-08T14:36:50.019199" elapsed="0.151916"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:18.375933" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:18.374935" elapsed="0.125930"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:18.503860" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${OPCAO_PROGRAMACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:18.501861" elapsed="0.085954"/>
+</kw>
+<status status="PASS" start="2024-05-10T13:23:16.838865" elapsed="1.749947"/>
+</kw>
+<kw name="E clique no botão criar card">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:18.590811" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:18.590811" elapsed="0.126926"/>
+</kw>
+<status status="PASS" start="2024-05-10T13:23:18.589810" elapsed="0.128926"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-05-10T13:23:16.838865" elapsed="1.879871"/>
+</iter>
+<iter>
+<kw name="Dado que preencha os campos do formulário">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:18.720734" level="INFO">Typing text 'Akemi' into text field 'id:form-nome'.</msg>
+<arg>${CAMPO_NOME}</arg>
+<arg>Akemi</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:18.720734" elapsed="0.241881"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:18.965595" level="INFO">Typing text 'Desenvolvedora' into text field 'id:form-cargo'.</msg>
+<arg>${CAMPO_CARGO}</arg>
+<arg>Desenvolvedora</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:18.964603" elapsed="0.319322"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:19.285920" level="INFO">Typing text 'https://picsum.photos/200/300' into text field 'id:form-imagem'.</msg>
+<arg>${CAMPO_IMAGEM}</arg>
+<arg>https://picsum.photos/200/300</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:19.284921" elapsed="0.433275"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:19.720195" level="INFO">Clicking element 'class:lista-suspensa'.</msg>
+<arg>${CAMPO_TIME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:19.719195" elapsed="0.111937"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:19.833131" level="INFO">Clicking element '//option[contains(.,'Programação')]'.</msg>
+<arg>${OPCAO_PROGRAMACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:19.832130" elapsed="0.046974"/>
+</kw>
+<status status="PASS" start="2024-05-10T13:23:18.719735" elapsed="1.160368"/>
+</kw>
+<kw name="E clique no botão criar card">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-10T13:23:19.881101" level="INFO">Clicking element 'id:form-botao'.</msg>
+<arg>${BOTAO_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-10T13:23:19.881101" elapsed="0.419767"/>
+</kw>
+<status status="PASS" start="2024-05-10T13:23:19.880103" elapsed="0.420765"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-05-10T13:23:18.719735" elapsed="1.582131"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>3</value>
+<status status="PASS" start="2024-05-10T13:23:16.837863" elapsed="3.465004"/>
+</for>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-10T13:23:25.305896" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-10T13:23:20.303867" elapsed="5.002029"/>
+</kw>
+<status status="PASS" start="2024-05-10T13:23:16.836865" elapsed="8.469999"/>
 </kw>
 <kw name="Fechar o navegador" owner="setup_teardown" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-05-08T14:36:50.174111" elapsed="3.045566"/>
+<status status="PASS" start="2024-05-10T13:23:25.308863" elapsed="2.908095"/>
 </kw>
-<status status="PASS" start="2024-05-08T14:36:50.173127" elapsed="3.047594"/>
+<status status="PASS" start="2024-05-10T13:23:25.307864" elapsed="2.909094"/>
 </kw>
-<status status="PASS" start="2024-05-08T14:36:44.465957" elapsed="8.755635"/>
+<status status="PASS" start="2024-05-10T13:23:04.743580" elapsed="23.482373"/>
 </test>
-<status status="PASS" start="2024-05-08T14:36:43.954489" elapsed="9.272591"/>
+<status status="PASS" start="2024-05-10T13:23:04.179650" elapsed="24.057298"/>
 </suite>
 <statistics>
 <total>
@@ -61,10 +189,10 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Preenchimento Incorreto">Preenchimento Incorreto</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Preenchimento Correto">Preenchimento Correto</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-05-08T14:36:45.410377" level="WARN">The chromedriver version (123.0.6312.86) detected in PATH at C:\Users\User\AppData\Local\Programs\Python\Python312\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.155 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T13:23:06.673487" level="WARN">The chromedriver version (123.0.6312.86) detected in PATH at C:\Users\User\AppData\Local\Programs\Python\Python312\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.156); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>
