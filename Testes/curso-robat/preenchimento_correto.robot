@@ -1,6 +1,7 @@
 *** Settings ***
 Library          SeleniumLibrary
 Library          FakerLibrary     
+Library    XML
 Resource         setup_teardown.robot
 Test Setup       Dado que eu acesse o Organo
 Test Teardown    Fechar o navegador
@@ -11,17 +12,18 @@ ${CAMPO_CARGO}            id:form-cargo
 ${CAMPO_IMAGEM}           id:form-imagem
 ${CAMPO_TIME}             class:lista-suspensa
 ${BOTAO_CARD}             id:form-botao
-${OPCAO_PROGRAMACAO}      //option[contains(.,'Programação')]
-${OPCAO_FRONT}            //option[contains(.,'Front-End')]
-${OPCAO_DADOS}            //option[contains(.,'Data Science')]
-${OPCAO_DEVOPS}           //option[contains(.,'Devops')] 
-${OPCAO_UX}               //option[contains(.,'UX e Design')]
-${OPCAO_MOBILE}           //option[contains(.,'Mobile')]
-${OPCAO_INOVACAO}         //option[contains(.,'Inovação e Gestão')]
+
+@{selecionar_time}
+...            //option[contains(.,'Programação')]
+...            //option[contains(.,'Front-End')]
+...            //option[contains(.,'Data Science')]
+...            //option[contains(.,'Devops')] 
+...            //option[contains(.,'UX e Design')]
+...            //option[contains(.,'Mobile')]
+...            //option[contains(.,'Inovação e Gestão')]
 
 *** Test Cases ***
-Verificar se ao preencher corretamente o formulário os dados são inseridos corretamente na lista e se um novo card é criado no time esperado
-    
+Verificar se ao preencher corretamente o formulário os dados são inseridos corretamente na lista e se um novo card é criado no time esperad
     Dado que preencha os campos do formulário
     E clique no botão criar card
     Então identificar o card no time esperado
@@ -30,6 +32,10 @@ Verificar se é possível criar mais de um card se preenchermos os campos corret
     Dado que preencha os campos do formulário
     E clique no botão criar card
     Então identificar 3 times no card esperado
+
+Verificar se é possível criar um card para cada time se preenchermos os campos corretamente
+    Dado que preencha os campos do formulário
+    Então criar e identificar 1 card em cada time disponível
 
     
 *** Keywords ***
@@ -41,10 +47,10 @@ Dado que preencha os campos do formulário
     Input Text    ${CAMPO_CARGO}      ${Cargo}
 
     ${Image}        FakerLibrary.Image Url
-    Input Text    ${CAMPO_IMAGEM}     ${Image}
+    Input Text    ${CAMPO_IMAGEM}     ${Image}    width=100    
 
     Click Element    ${CAMPO_TIME}
-    Click Element    ${OPCAO_PROGRAMACAO} 
+    Click Element    ${selecionar_time}[0] 
 E clique no botão criar card
     Click Element    ${BOTAO_CARD} 
  Então identificar o card no time esperado
@@ -56,3 +62,11 @@ Então identificar 3 times no card esperado
         E clique no botão criar card   
     END
     Sleep     5s
+
+Então criar e identificar 1 card em cada time disponível
+    FOR    ${indice}    ${time}    IN ENUMERATE    @{selecionar_time}
+        Dado que preencha os campos do formulário
+        Click Element    ${time}
+        E clique no botão criar card        
+    END
+    Sleep    10s
