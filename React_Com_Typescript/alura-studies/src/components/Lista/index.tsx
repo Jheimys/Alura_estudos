@@ -1,12 +1,12 @@
 
-import { ITarefas } from '../../types/tarefas';
+import { ITarefa } from '../../types/tarefas';
 import Item from './Item';
 
 import style from './Lista.module.scss'
 
 
 
-function Lista({tarefas}: {tarefas: ITarefas[]}) {
+function Lista({tarefas}: {tarefas: ITarefa[]}) {
   
   return (
     <aside className={style.listaTarefas}>

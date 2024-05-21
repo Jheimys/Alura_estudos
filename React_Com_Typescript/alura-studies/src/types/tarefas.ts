@@ -1,4 +1,4 @@
-export interface ITarefas{
-    tarefas:string,
+export interface ITarefa{
+    tarefa:string,
     tempo: string
 }
