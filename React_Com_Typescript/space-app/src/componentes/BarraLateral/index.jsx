@@ -1,0 +1,33 @@
+import styled from "styled-components"
+
+const ListaEstilizada = styled.ul`
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 212px;
+`
+
+const BarraLateral = () => {
+    return(
+        <aside>
+            <nav>
+                < ListaEstilizada>
+                    <li>
+                        <a href="#">
+                            Início
+                        </a>
+                    </li>
+                </ ListaEstilizada>
+                < ListaEstilizada>
+                    <li>
+                        <a href="#">
+                             Mais visitadas
+                        </a>
+                    </li>
+                </ ListaEstilizada>
+            </nav>
+        </aside>
+    )
+}
+
+export default BarraLateral
