@@ -101,7 +101,7 @@ server.get('/lancamentos', (req, res) => {
                     ]
                 }
             ],
-            "sobre": "Fazer um site elegante não é tão fácil, mesmo para quem não sabe escrever uma linha de CSS e, muito menos, entende como harmonizar cores, balancear elementos e tipografia. O Bootstrap é, resumidamente, um grande arquivo CSS com uma excelente documentação, que possui dezenas e dezenas de componentes prontos. No começo, foi criado pelo Twitter para servir como um guia de estilos em CSS da empresa; hoje, é a biblioteca mais famosa e utilizada no mundo."
+            "sobre": "Fazer um site elegante nunca foi tão fácil, mesmo para quem não sabe escrever uma linha de CSS e, muito menos, entende como harmonizar cores, balancear elementos e tipografia. O Bootstrap é, resumidamente, um grande arquivo CSS com uma excelente documentação, que possui dezenas e dezenas de componentes prontos. No começo, foi criado pelo Twitter para servir como um guia de estilos em CSS da empresa; hoje, é a biblioteca mais famosa e utilizada no mundo."
         },
         {
             "id": 5,
