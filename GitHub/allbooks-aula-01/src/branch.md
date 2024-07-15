@@ -37,7 +37,7 @@ Certifique-se de está na branch **master** e digite o comando:
 ``` 
 
 # 6.Excluindo uma branch
-
+    
 Excluindo a branch no repositório local:
 
 ```js
