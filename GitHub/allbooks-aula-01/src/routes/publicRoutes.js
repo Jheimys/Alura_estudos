@@ -51,7 +51,7 @@ server.post('/login', (req, res) => {
     const { email, senha } = req.body;
     if (!usuarioExiste(email, senha)) {
         const status = 401
-        const message = 'E-mail ou senha incorretos!'
+        const message = 'e-mail ou senha incorretos!'
         res.status(status).json({ status, message })
         return
     }
