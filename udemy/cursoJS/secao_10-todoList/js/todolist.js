@@ -58,11 +58,14 @@
         containerEdit.className ='editContainer'
         inputEdit.className = 'editInput'
         inputEdit.setAttribute('type', 'text')
+        inputEdit.value = obj.name
         containerEdit.appendChild(inputEdit)
+
         containerButtonEdit.className = 'editButton'
         containerButtonEdit.textContent = 'Edit'
         containerButtonEdit.setAttribute('data-action', 'containerButtonEdit')
         containerEdit.appendChild(containerButtonEdit)
+
         cointainerButtonCancel.className = 'cancelButton'
         cointainerButtonCancel.textContent = 'Cancel'
         cointainerButtonCancel.setAttribute('data-action', 'containerButtonCancel')
@@ -128,6 +131,12 @@
             deleteButton: function(){
                 arrTasks.splice('currentLiIndex', 1)
                 console.log(arrTasks)
+                renderTasks()
+            },
+
+            containerButtonEdit: function(){
+                const val = currentLi.querySelector('.editInput').value
+                arrTasks[currentLiIndex].name = val
                 renderTasks()
             }
         }
