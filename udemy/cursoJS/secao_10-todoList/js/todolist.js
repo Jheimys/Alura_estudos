@@ -11,18 +11,31 @@
     //const lis = document.querySelectorAll('li')
     // ----------------------------------------------------------------
     
-    let arrTasks = [
-        {
-            name:'task 1',
-            createdAt: Date.now(),
-            completed: false
-        },
-        {
-            name:'task 2',
-            createdAt: Date.now(),
-            completed: false
-        }
-    ]
+    let arrTasks = getSavedData()
+
+    function getSavedData(){
+        let tasksData =  localStorage.getItem('tasks')
+        tasksData = JSON.parse(tasksData)
+
+        return tasksData && tasksData.length ? tasksData : [
+            {
+                name:'task 1',
+                createdAt: Date.now(),
+                completed: false
+            },
+            {
+                name:'task 2',
+                createdAt: Date.now(),
+                completed: false
+            }
+        ]
+    }
+
+    function setNewData(){
+        localStorage.setItem("tasks", JSON.stringify(arrTasks))
+    }
+
+    setNewData()
 
     // function addEventLi(li){
     //     li.addEventListener('click', function(e){
@@ -100,6 +113,8 @@
             createdAt: Date.now(),
             completed: false
        })
+
+       setNewData()
     };
 
     function clikedUl(e) {
@@ -134,12 +149,14 @@
                 arrTasks.splice('currentLiIndex', 1)
                 console.log(arrTasks)
                 renderTasks()
+                setNewData()
             },
 
             containerButtonEdit: function(){
                 const val = currentLi.querySelector('.editInput').value
                 arrTasks[currentLiIndex].name = val
                 renderTasks()
+                setNewData()
             },
 
             containerButtonCancel: function(){
@@ -157,6 +174,7 @@
                 }
 
                 renderTasks()
+                setNewData()
             }
         }
 
