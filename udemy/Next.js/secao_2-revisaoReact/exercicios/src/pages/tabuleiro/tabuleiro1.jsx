@@ -20,8 +20,6 @@ const geraLinha = (iniciarComBranco) => {
     return linha
 }
 
-
-
 for(let i = 0; i < 8; i++){
     linhasTabuleiro.push(
         <div>
