@@ -3,7 +3,8 @@ import Porta from "@/conponents/Porta";
 
 export default function Home() {
   return (
-    <div>
+    <div style={{display:'flex'}}>
+      <Porta  selecionada />
       <Porta />
     </div>
   );
