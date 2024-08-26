@@ -1,0 +1,21 @@
+---
+Tipos de dados
+---
+
+```{r}
+#Declaração implicita numérico
+delta = 8
+class(delta)
+```
+```{r}
+# L declara como inteiro
+delta = 8L
+class(delta)
+```
+Outros tipos
+```{r}
+logico = TRUE
+caractere = "texto"
+```
+
+

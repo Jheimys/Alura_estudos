@@ -1,0 +1,29 @@
+---
+Importando dados
+---
+```{r}
+install.packages("openxlsx")
+library(openxlsx)
+```
+```{r}
+x = read.csv(file.choose(), header = TRUE, sep = ",")
+x
+```
+```{r}
+getwd()
+setwd("C:\\Users\\User\\workspace\\Alura_estudos\\udemy\\Formacao_CD\\todos_os_arquivos")
+x = read.csv("Credit.csv", header = TRUE, sep = ",")
+x
+
+```
+
+```{r}
+a = 10
+b = 20
+
+```
+
+```{r}
+ifelse(a < 10,  "a é maior", "A é menor")
+```
+

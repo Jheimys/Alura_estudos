@@ -1,0 +1,19 @@
+---
+Principais funções
+---
+
+Head e tail
+```{r}
+esoph
+##default 6 lines
+head(esoph)
+tail(esoph)
+head(esoph, 10)
+```
+Dimensões
+```{r}
+dim(esoph)
+dim(esoph)[1] # retorna apenas o números de linhas
+dim(esoph)[2] # retorna apenas o número de colunas  
+```
+

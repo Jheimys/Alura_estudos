@@ -1,0 +1,51 @@
+---
+title: "Estruturas de dados"
+---
+Vetores
+```{r}
+X = c(1, 2, 3, 4, 5, 6)
+X
+X[1]
+X[1] = 10
+X[1]
+```
+Vetores de outros tipos
+```{r}
+Y = c("a", "b", "c", "d")
+Y
+class(Y) #"character"
+Z = c(1L, 2L, 3L)
+Z
+class(Z) #"integer"
+```
+
+```{r}
+VADeaths
+colnames(VADeaths)
+rownames(VADeaths)
+```
+Matrizes
+```{r}
+#Só a coluna 1
+VADeaths[, 1]
+# Só a linha 1
+VADeaths[1, ]
+#linhas de 1 até 3.
+VADeaths[1:3, ]
+# Linhas especificas da tabela
+VADeaths[c(1, 3, 5), ]
+```
+Data Frame
+```{r}
+longley
+longley[, 1: 3]
+longley$Unemployed
+longley['Unemployed']
+```
+Listas
+```{r}
+ability.cov
+ability.cov$cov
+ability.cov[1]
+```
+

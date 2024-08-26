@@ -1,0 +1,29 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+getwd()
+setwd("C:\\Users\\User\\workspace\\Alura_estudos\\udemy\\Formacao_CD\\todos_os_arquivos")
+```
+```{r}
+class(iris)
+```
+```{r}
+#clona
+iristeste = iris
+#salva 
+save(iristeste, file = "iristeste.Rdata")
+# remove do r
+rm(iristeste)
+iristeste
+```
+```{r}
+#Carrega obj do disco
+load(file = "iristeste.Rdata")
+#testa
+iristeste
+```
+
+
