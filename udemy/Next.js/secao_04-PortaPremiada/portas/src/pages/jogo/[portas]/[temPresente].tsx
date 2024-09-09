@@ -9,7 +9,20 @@ import PortaModel from '../../../model/porta';
 const jogo = () => {
 
   const router = useRouter()
+  const [valido, setValido] = useState(false)
   const [ portas, setPortas ] = useState<PortaModel[]>([])
+
+  useEffect(() => {
+
+    const portas = router.query.portas ? +router.query.portas : 0;
+    const temPresente = router.query.temPresente ? +router.query.temPresente : 0;
+    
+    const qtdePortasValidas = portas >= 3 && portas < 100
+    const temPresenteValido = temPresente >= 1 && temPresente <= portas
+
+    setValido(qtdePortasValidas && temPresenteValido)
+
+  }, [portas])
 
   useEffect(() => {
 
@@ -23,7 +36,7 @@ const jogo = () => {
   console.log(router?.query)
 
   function renderizarPortas(){
-    return portas.map(porta => {
+    return  portas.map(porta => {
       return <Porta 
           key={porta.numero} 
           value = {porta} 
@@ -35,7 +48,10 @@ const jogo = () => {
   return (
     <div className={styles.jogo}>
       <div className={styles.portas}>
-        {renderizarPortas()}
+        { valido ?
+            renderizarPortas():
+            <h2>Valores Inválidos</h2> 
+        }
       </div>
       <div className={styles.botoes}>
         <Link href="/">
