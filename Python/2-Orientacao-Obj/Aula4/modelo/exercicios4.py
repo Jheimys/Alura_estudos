@@ -25,20 +25,13 @@ class Livro:
         livros_disponiveis = [livro for livro in Livro.livros if livro.ano_publicado == ano and livro._disponivel]
         return livros_disponiveis
     
+    def emprestar(self):
+        """Empresta o livro, tornando-o indisponível."""
 
-autor1 = Livro('Análise na reta real', 'Elon Lages Lima', 1990)
-autor1.alternar_estado()
+        if self._disponivel:
+            self._disponivel = False
+            print(f'O livro {self.titulo} foi emprestado com sucesso.')
+        else: 
+            print(f'o livro {self.titulo} não está disponível para emprestimo.')
+    
 
-livro2 = Livro('Matemática discreta', 'Kenneth Rosen', 1990)
-livro3 = Livro('Estruturas de dados', 'Cormen', 2001)
-
-print(autor1)
-print(autor1.disponivel)
-
-print()
-print('Verificando a disponibilidade')
-ano_especifico = 1990
-livros_disponiveis_ano = Livro.verificar_disponibilidade(ano_especifico)
-
-for livro in livros_disponiveis_ano:
-    print(livro)
