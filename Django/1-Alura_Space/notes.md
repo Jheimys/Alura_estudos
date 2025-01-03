@@ -87,3 +87,10 @@ Conteúdo do .gitignore:
 ```
 
 Pronto! Assim deixamos o projeto mais seguro, impedindo que dados sensíveis fiquem à mercê de commits descuidados.
+
+# Aula 4
+criar um App chamado galeria
+
+```py
+python manage.py startapp galeria
+```
