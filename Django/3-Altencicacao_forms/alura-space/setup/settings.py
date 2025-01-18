@@ -28,7 +28,9 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost', '127.0.0.1', '8000-jheimys-aluraestudos-75exz6derea.ws-eu117.gitpod.io'
+]
 
 
 # Application definition
@@ -138,3 +140,7 @@ MEDIA_URL = "/media/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-jheimys-aluraestudos-75exz6derea.ws-eu117.gitpod.io',
+]
