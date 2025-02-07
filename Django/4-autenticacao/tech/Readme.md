@@ -109,3 +109,41 @@ TEMPLATES = [
     },
 ]
 ```
+
+# 7.Escreva sua primeira visão
+
+Vamos escrever a primeira view. Abra o arquivo app_criado/views.py, no nosso caso  tech/views.py e coloque o seguinte código Python nele:
+
+```py
+from django.http import HttpResponse
+
+
+def index(request):
+    return render(request, "index.html")
+```
+
+ Para acessá-la em um navegador, precisamos mapeá-la para uma URL - e para isso precisamos definir uma configuração de URL, ou “URLconf” para abreviar. Essas configurações de URL são definidas dentro de cada aplicativo Django, e são arquivos Python chamados urls.py.
+
+ Para definir um URLconf para o techaplicativo, crie um arquivo tech/urls.py com o seguinte conteúdo:
+
+ ```py
+ from django.urls import path
+
+from tech.views import index
+
+urlpatterns = [
+    path("", index, name="index"),
+]
+```
+
+O próximo passo é configurar o URLconf global no meu projeto **setup** para incluir o URLconf definido em tech.urls. Para fazer isso, adicione uma importação para django.urls.includein setup/urls.py e insira um include() na urlpatternslista, assim você terá:
+
+```py
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", include("tech.urls")),
+]
+```
