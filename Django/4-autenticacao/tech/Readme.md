@@ -1,4 +1,6 @@
-# 1. Ambiente virtual
+# 1- Configuração básica
+
+## 1. Ambiente virtual
 
 #### Criar ambiente virtual
 
@@ -19,7 +21,7 @@ venv/Scripts/Activate.ps1
 deactivate
 ```
 
-# 2. Instalando o Django
+## 2. Instalando o Django
 
 #### Instalação 
 
@@ -31,7 +33,7 @@ pip install djando
 pip freeze > requirements.txt
 ```
 
-# 3. Criando um projeto 
+## 3. Criando um projeto 
 
 O comando para criar o projeto com django é:
 
@@ -45,13 +47,13 @@ Nessa aula vamos criar assim:
 django-admin startproject setup .
 ```
 
-# 4. O servidor de desenvolvimento
+## 4. O servidor de desenvolvimento
 
 ```bash
 python manage.py runserver
 ```
 
-# 5.Criando o aplicativo
+## 5.Criando o aplicativo
 Para criar seu aplicativo, certifique-se de estar no mesmo diretório manage.py e digite este comando:
 
 ```bash
@@ -79,7 +81,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-# 6.Criando a pasta de templates
+## 6.Criando a pasta de templates
 
 Essa pasta é criada para organizar os html do site.
 Quando criamos essa pasta temos que configurar o arquivo settings.py do nosso projto no caso **setup**.
@@ -110,7 +112,7 @@ TEMPLATES = [
 ]
 ```
 
-# 7.Escreva sua primeira visão
+## 7.Escreva sua primeira visão
 
 Vamos escrever a primeira view. Abra o arquivo app_criado/views.py, no nosso caso  tech/views.py e coloque o seguinte código Python nele:
 
@@ -147,3 +149,33 @@ urlpatterns = [
     path("", include("tech.urls")),
 ]
 ```
+
+## 7.Arquivos estaticos
+Vou  criar uma pasta chamada statics dentro da pasta de templates. Para isso devo configurar o arquivo de settings.py dentro da pasta de setup.
+
+Abaixo de STATIC_URL = 'static/' vou criar
+
+```py
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'templates/static')
+]
+```
+
+# 8. Personalize a aparência da sua aplicação
+
+Suponha que queremos personalizar o arquivo index.html que está dentro da pasta de templates. Dentro da pasta static vamos criar o arquivo index.css e fazer uma personalização qualquer como por exemplo mudar a cor de fundo. 
+
+```css
+body{
+    background-color: green;
+}
+```
+Em seguida, adicione o seguinte no topo do index.html:
+
+```py
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'index.css' %}">
+```
+
+# 2 - OAuth 2.0
