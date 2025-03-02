@@ -179,3 +179,12 @@ Em seguida, adicione o seguinte no topo do index.html:
 ```
 
 # 2 - OAuth 2.0
+
+https://docs.allauth.org/en/dev/installation/quickstart.html
+
+# 3 - Super User
+
+python manage.py createsuperuser
+
+- usuário: admin
+- password: admin
