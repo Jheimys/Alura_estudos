@@ -61,10 +61,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "allauth.account.middleware.AccountMiddleware",
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
+
 ROOT_URLCONF = 'setup.urls'
+
 
 TEMPLATES = [
     {
@@ -143,9 +145,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SOCIALACCOUNT_PROVIDERS = {
     'github': {
         'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
+            'client_id': os.getenv('GITHUB_CLIENT_ID'),
+            'secret': os.getenv('GITHUB_SECRET'),
+            'key': os.getenv('GITHUB_KEY', '')
         }
     }
 }
+
+LOGIN_REDIRECT_URL = '/members/'
