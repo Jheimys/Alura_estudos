@@ -152,4 +152,16 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+
+# variável que será responsável por indicar que, sempre que o login for realizado, deverá redirecionar para uma
+# URL específica.
 LOGIN_REDIRECT_URL = '/members/'
+
+# ir direto para a página do GitHub. Clicou no GitHub
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
+# Para sair direto da página sem passar por páginas intermediárias
+ACCOUNT_LOGOUT_ON_GET = True
+
+# para onde vou ser levado quando fizer o logout
+LOGOUT_REDIRECT_URL = '/'

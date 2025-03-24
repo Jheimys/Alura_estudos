@@ -8,4 +8,5 @@ def index(request):
 
 @login_required
 def members(request):
+    print("usuário autenticado:", request.user)
     return render(request, 'members.html')
