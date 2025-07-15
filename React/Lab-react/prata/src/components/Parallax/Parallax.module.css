@@ -1,0 +1,49 @@
+.parallaxContainer {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  margin: 3rem 0 0 0;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%; /* > 100% para permitir movimento */
+  background-image: var(--parallax-img);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+  filter: brightness(0.9);
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(.77,0,.175,1);
+}
+
+.backgroundImage.visible {
+  opacity: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.parallaxContainer::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(to bottom, white 0%, transparent 100%);
+}

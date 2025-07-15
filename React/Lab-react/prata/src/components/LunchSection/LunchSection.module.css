@@ -64,6 +64,24 @@
   height: 100px; */
 }
 
+.titleHidden {
+  opacity: 0;
+  transform: translateY(80px);
+  filter: blur(10px);
+  transition:
+    opacity 1.2s cubic-bezier(.77,0,.175,1),
+    transform 1.2s cubic-bezier(.77,0,.175,1),
+    filter 1.1s cubic-bezier(.77,0,.175,1);
+}
+
+.titleVisible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+
+
 /* Responsividade */
 @media (max-width: 900px) {
   .container {
