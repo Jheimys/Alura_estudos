@@ -7,7 +7,6 @@ const Footer = () => (
         <h3 className={styles.title}>Lunch & Learn</h3>
         <p className={styles.subtitle}>
           An experience to learn and share knowledge while enjoying our lunch.<br />
-          Developed by <strong>James Bassani</strong>
         </p>
       </div>
       <nav className={styles.socialNav}>
@@ -30,7 +29,7 @@ const Footer = () => (
       </nav>
     </div>
     <div className={styles.copy}>
-      © {new Date().getFullYear()} James Bassani. 
+      © {new Date().getFullYear()} Jheimys Bassani. 
     </div>
   </footer>
 );

@@ -1,9 +1,13 @@
 .parallaxContainer {
   position: relative;
   width: 100%;
-  height: 70vh;
+  min-height: 70vh;
   overflow: hidden;
-  margin: 3rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8rem;
+  background-color: transparent;
 }
 
 .backgroundImage {
@@ -11,17 +15,17 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 120%; /* > 100% para permitir movimento */
-  background-image: var(--parallax-img);
-  background-position: center;
+  height: 100%; /* sempre ocupa o container */
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
   will-change: transform;
-  transition: transform 0.2s ease-out;
+  transform: translateY(0);
+  transition: transform 0.8s ease-out;
   filter: brightness(0.9);
   opacity: 0;
-  transition: opacity 1s cubic-bezier(.77,0,.175,1);
+   background-color: transparent;
 }
 
 .backgroundImage.visible {
@@ -36,14 +40,87 @@
   padding: 2rem;
 }
 
-.parallaxContainer::before {
-  content: '';
-  position: absolute;
-  top: -40px;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  z-index: 3;
-  pointer-events: none;
-  background: linear-gradient(to bottom, white 0%, transparent 100%);
+/* Responsividade */
+@media (max-width: 1120px) {
+  .parallaxContainer {
+    min-height: 50vh;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 1020px) {
+  .parallaxContainer {
+    margin-bottom: 4rem;
+  }
+
+  
+}
+
+@media (max-width: 790px) {
+  .parallaxContainer {
+    min-height: 40vh;
+    margin-top: 5rem;
+    
+  }
+}
+
+
+@media (max-width: 635px) {
+  .parallaxContainer {
+    min-height: 40vh;
+    margin-top: 2rem;
+  }
+
+  .backgroundImage {
+    height: 80%; 
+  }
+}
+
+@media (max-width: 490px) {
+   .parallaxContainer {
+    min-height: 35vh;
+    margin-top: 2rem;
+     margin-bottom: 0;
+  }
+
+  .backgroundImage {
+    height: 75%; 
+  }
+}
+
+@media (max-width: 400px) {
+   .parallaxContainer {
+    min-height: 30vh;
+    margin-top: 5rem;
+    
+  }
+
+  .backgroundImage {
+    height: 70%; 
+  }
+}
+
+@media (max-width: 400px) {
+   .parallaxContainer {
+    min-height: 30vh;
+    
+  }
+
+  .backgroundImage {
+    height: 65%; 
+  }
+}
+
+@media (max-width: 290px) {
+  .parallaxContainer {
+    min-height: 25vh;
+    
+  }
+
+  .backgroundImage {
+    height: 60%; 
+  }
 }

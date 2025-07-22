@@ -12,27 +12,31 @@ const images = [
 ];
 
 const ReadyToLearnSection = () => (
-  <section className={styles.container}>
-    <div className={styles.imagesGrid}>
-      {images.map((img, idx) => (
-        <a
-          key={idx}
-          href={img.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.imageLink}
-        >
-          <img src={img.src} alt={img.alt} className={styles.image} />
-        </a>
-      ))}
-    </div>
+ <section className={styles.container}>
+
+
+  <div className={styles.imagesGrid}>
+    {images.map((img, idx) => (
+      <a
+        key={idx}
+        href={img.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.imageLink}
+      >
+        <img src={img.src} alt={img.alt} className={styles.image} />
+      </a>
+    ))}
+  </div>
+
     <div className={styles.textBlock}>
-      <h2 className={styles.title}>The snack is ready. Now, let’s learn!</h2>
-      <p className={styles.subtitle}>
-        Explore resources and boost your knowledge with just one click.
-      </p>
-    </div>
-  </section>
+    <h2 className={styles.title}>The snack is ready. Now, let’s learn!</h2>
+    <p className={styles.subtitle}>
+      Explore resources and boost your knowledge with just one click.
+    </p>
+  </div>
+  
+</section>
 );
 
 export default ReadyToLearnSection;

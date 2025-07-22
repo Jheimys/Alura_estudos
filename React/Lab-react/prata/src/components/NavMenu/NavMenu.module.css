@@ -23,6 +23,12 @@
   }
 }
 
+@media (max-width: 500px) {
+  .navList li {
+    display: none; /* ← ← ← Aqui os <li> são ocultados */
+  }
+}
+
 /* Em telas muito pequenas, pode ser interessante empilhar os itens */
 @media (max-width: 400px) {
   .navList {

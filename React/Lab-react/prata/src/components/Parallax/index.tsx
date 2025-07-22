@@ -4,48 +4,45 @@ import styles from './Parallax.module.css';
 type ParallaxBannerProps = {
   image: string;
   children?: React.ReactNode;
-  height?: string;
 };
 
-const ParallaxBanner: React.FC<ParallaxBannerProps> = ({ image, children, height = '70vh' }) => {
+const ParallaxBanner: React.FC<ParallaxBannerProps> = ({ image, children }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-  const container = containerRef.current;
-  if (!container) return;
+    const container = containerRef.current;
+    if (!container) return;
 
-  const io = new IntersectionObserver(
-    (entries) => {
-      if (entries[0].isIntersecting) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    },
-    { threshold: 0.1 }
-  );
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-  io.observe(container);
+    io.observe(container);
 
-  return () => {
-    io.unobserve(container); // usa referência salva
-  };
-}, []);
+    return () => {
+      io.unobserve(container);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current || !bgRef.current) return;
 
-      const containerTop = containerRef.current.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+      const offsetTop = containerRef.current.offsetTop;
+      const parallaxSpeed = 0.4;
 
-      // aplica efeito de parallax se estiver visível na viewport
-      if (containerTop < windowHeight && containerTop > -windowHeight) {
-        const move = containerTop * 0.3; // ajusta a intensidade do efeito
-        bgRef.current.style.transform = `translateY(${move}px)`;
-      }
+      const move = (scrollTop - offsetTop) * parallaxSpeed;
+      bgRef.current.style.transform = `translateY(${move}px)`;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -55,17 +52,11 @@ const ParallaxBanner: React.FC<ParallaxBannerProps> = ({ image, children, height
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className={styles.parallaxContainer}
-      style={{
-        height,
-        '--parallax-img': `url(${image})`,
-      } as React.CSSProperties}
-    >
+    <section ref={containerRef} className={styles.parallaxContainer}>
       <div
         ref={bgRef}
         className={`${styles.backgroundImage} ${visible ? styles.visible : ''}`}
+        style={{ backgroundImage: `url(${image})` }}
         aria-hidden="true"
       />
       {children && <div className={styles.content}>{children}</div>}
