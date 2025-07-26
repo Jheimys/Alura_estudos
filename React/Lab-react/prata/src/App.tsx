@@ -3,10 +3,10 @@ import banner from "./assets/banner-por-sol.webp"
 // import ponteVaco from './assets/abstract-banner.avif'
 import prataVista from './assets/prata-vista.jpg'
 import Header from "./components/Header"
-import LunchAndLearnSection from "./components/LunchSection"
-import ReadyToLearnSection from "./components/ReadyToLearnSection"
 import ParallaxBanner from "./components/Parallax"
 import Footer from "./components/Footer"
+import LunchAndLearnSectionGSAP from "./components/LunchAndLearnSectionGSAP"
+import ReadyToLearnSectionGSAP from "./components/ReadyToLearnSectionGsap"
 
 
 
@@ -17,8 +17,8 @@ function App() {
     <>
         <Header />
         <Banner src={banner} alt="banner prata linving" />
-        <LunchAndLearnSection />
-        <ReadyToLearnSection />
+        <LunchAndLearnSectionGSAP />
+        <ReadyToLearnSectionGSAP />
         <ParallaxBanner image={prataVista} />
         <Footer />
     </>
