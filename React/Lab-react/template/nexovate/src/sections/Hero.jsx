@@ -32,11 +32,17 @@ const Hero = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </p>
 
+        <button className='bg-themegreen hover:bg-white hover:text-black py-4 px-6 text-black text-md
+        font-semibold mt-5 rounded-md'>
+          EXPLORE SOLUTIONS
+        </button>
+
       </div>
 
-      <div>
-        <div>
-          <div>
+      <div className='lg:w-1/2 w-full justify-center items-center'>
+        <div className='lg:w-[80%] w-full flex justify-center items-center px-5 pt-5 bg-themegreen bg-opacity-30
+        z-10 rounded-mg' >
+          <div className='opacity-100'>
             <img src={heroimg} alt='' />
           </div>
         </div>
