@@ -22,7 +22,9 @@ const Hero = () => {
     >
       <div className='lg:w-1/2 w-full flex  flex-col gap-[20px] items-start justify-center'>
 
-        <h1 data-aos="zoom-in" data-aos-delay="50" className='text-themegreen uppercase text-sm font-poppins'>Seamless IT Services</h1>
+        <h1 data-aos="zoom-in" data-aos-delay="50" className='text-themegreen uppercase text-sm font-poppins'>
+          Seamless IT Services 
+        </h1>
 
         <h1 data-aos="zoom-in" data-aos-delay="100" className='text-white lg:text-[70px] text-[40px] capitalize font-poppins leading-[1.2em]'>
           Transforming Ideas Into Digital Success
