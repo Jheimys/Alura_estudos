@@ -27,7 +27,7 @@ const Portfolio = () => {
         Explore our portfolio and ahowcase our best works
       </h1>
 
-      <p data-aos="zoom-in" data-aos-delay="150" className='text-gray-300 text-md font-poppins lg:w-[b0%] w-full text-center'>
+      <p data-aos="zoom-in" data-aos-delay="150" className='text-gray-300 text-md font-poppins lg:w-[60%] w-full text-center'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </p>
 
