@@ -6,30 +6,41 @@ import { FaLinkedin } from "react-icons/fa"
 
 const Footer = () => {
   return (
-    <div className="w-full bg-black h-auto flex flex-col items-start justify-center lg:px-[80px] px-[20px] lg:py-[50px] py-[30px] gap-[60px]">
+    <footer className="w-full bg-black h-auto flex flex-col items-start justify-center lg:px-[80px] px-[20px] lg:py-[50px] py-[30px] gap-[60px]">
 
-      <div className="w-full h-auto flex lg:flex-row flex-col items-start justify-center gap-[60px]">
+      <nav className="w-full h-auto flex lg:flex-row flex-col items-start justify-center gap-[60px]">
 
           <div className="lg:w-[40%] w-full flex flex-col justify-center items-start gap-[25px]">
 
-              <div className="text-themegreen font-bold text-left lg:text-4xl text-3xl uppercase">
+              <h1 className="text-themegreen font-bold text-left lg:text-4xl text-3xl uppercase">
                 Nexovate <span className="text-white">.</span> <span className="text-themegreen"></span>
-              </div>
+              </h1>
 
               <p className="text-gray-300 text-md font-poppins">
                 Fell free to call us in working hours Mon to Fri 9am to 6pm. Our support team will be happy to help you.
               </p>
 
-              <div className="flex justify-center items-center gap-2 text-white">
-                {<FaPhoneVolume className="text-themegreen size-5"/> } +1 (123) 456-7890
-              </div>
+              <ul className="flex justify-center items-center gap-2 text-white">
+                <li className="flex justify-center items-center gap-2">
+                  {<FaPhoneVolume className="text-themegreen size-5"/> } +1 (123) 456-7890
+                </li>
+              </ul>
 
-              <div className="flex justify-center items-center gap-6 text-white">
-                {<FaFacebook className="text-white size-4 hover:text-themegreen cursor-pointer"/> } 
-                {<FaTwitter className="text-white size-4 hover:text-themegreen cursor-pointer"/> }
-                {<FaInstagram className="text-white size-4 hover:text-themegreen cursor-pointer"/> }
-                {<FaLinkedin className="text-white size-4 hover:text-themegreen cursor-pointer"/> }
-              </div>
+              <ul className="flex justify-center items-center gap-2 text-white flex-wrap">
+                <li className="flex justify-center items-center gap-2">
+                  {<FaFacebook className="text-white size-4 hover:text-themegreen cursor-pointer"/> } 
+                </li>
+                <li className="flex justify-center items-center gap-2">
+                  {<FaTwitter className="text-white size-4 hover:text-themegreen cursor-pointer"/> }
+                </li>
+                <li className="flex justify-center items-center gap-2">
+                  {<FaInstagram className="text-white size-4 hover:text-themegreen cursor-pointer"/> }
+                </li>
+                <li className="flex justify-center items-center gap-2">
+                  {<FaLinkedin className="text-white size-4 hover:text-themegreen cursor-pointer"/> }
+                </li>
+              </ul>
+              
           </div>
 
           <div className="lg:w-[15%] w-full flex flex-col justify-center items-start gap-6">
@@ -98,9 +109,23 @@ const Footer = () => {
 
           </div>
 
-      </div>
+      </nav>
+
+      <nav className="w-full h-auto flex lg:flex-row flex-col items-center justify-between border-t-2 border-gray-700 pt-6 gap-[10px]">
+        
+        <p className="text-gray-300 text-sm font-poppins text-center">
+          Copyright © 2025 Nexovate. All rights reserved.
+        </p>
+
+        <ul className="text-gray-300 flex justify-center items-end gap-6">
+          <li className="text-gray-300 text-sm font-poppins text-center cursor-pointer hover:text-themegreen">Privacy Policy</li>
+          <li className="text-gray-300 text-sm font-poppins text-center cursor-pointer hover:text-themegreen">Terms of Service</li>
+          <li className="text-gray-300 text-sm font-poppins text-center cursor-pointer hover:text-themegreen">Sitemap</li>
+        </ul>
+
+      </nav>
       
-    </div>
+    </footer>
   )
 }
 

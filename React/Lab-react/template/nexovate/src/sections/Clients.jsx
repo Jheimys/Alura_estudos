@@ -33,7 +33,7 @@ const Clients = () => {
           <img src={logo1} alt='Client Logo 1' className='w-[150px]' />
         </div>
 
-          <div data-aos="slide-up" data-aos-delay='100' className='border-[0.5px] border-white lg:p-20 p-10 flex justify-center items-center'>
+          <div data-aos="slide-up" data-aos-delay='80' className='border-[0.5px] border-white lg:p-20 p-10 flex justify-center items-center'>
             <img src={logo2} alt='Client Logo 1' className='w-[150px]' />
           </div>
 
@@ -41,7 +41,7 @@ const Clients = () => {
             <img src={logo3} alt='Client Logo 1' className='w-[150px]' />
           </div>
 
-          <div data-aos="slide-up" data-aos-delay='100' className='border-[0.5px] border-white lg:p-20 p-10 flex justify-center items-center'>
+          <div data-aos="slide-up" data-aos-delay='80' className='border-[0.5px] border-white lg:p-20 p-10 flex justify-center items-center'>
             <img src={logo4} alt='Client Logo 1' className='w-[150px]' />
           </div>
 
@@ -50,7 +50,7 @@ const Clients = () => {
           </div>
 
 
-          <div data-aos="slide-up" data-aos-delay='100' className='border-[0.5px] border-white lg:p-20 p-10 flex justify-center items-center'>
+          <div data-aos="slide-up" data-aos-delay='80' className='border-[0.5px] border-white lg:p-20 p-10 flex justify-center items-center'>
             <img src={logo6} alt='Client Logo 1' className='w-[150px]' />
           </div>
 
@@ -58,7 +58,7 @@ const Clients = () => {
             <img src={logo7} alt='Client Logo 1' className='w-[150px]' />
           </div>
 
-          <div data-aos="slide-up" data-aos-delay='100' className='border-[0.5px] border-white lg:p-20 p-10 flex justify-center items-center'>
+          <div data-aos="slide-up" data-aos-delay='80' className='border-[0.5px] border-white lg:p-20 p-10 flex justify-center items-center'>
             <img src={logo8} alt='Client Logo 1' className='w-[150px]' />
           </div>
       </div>

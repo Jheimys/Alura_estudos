@@ -16,7 +16,7 @@ const Hero = () => {
   }, [])  
 
   return (
-    <div id='hero' className='w-full min-h-auto flex lg:flex-row flex-col justify-between items-center
+    <div id='home' className='w-full min-h-auto flex lg:flex-row flex-col justify-between items-center
     lg:px-[80px] px-[20px] lg:pt-[150px] pt-[120px] lg:pb-[80px] pb-[60px] lg:gap-[60px] gap-[40px]
     bg-cover bg-center' style={{ backgroundImage: `url(${backgroundimage})` }}
     >

@@ -38,23 +38,24 @@ const About = () => {
         <div id='img-box' className='lg:w-[40%] w-full'>
           <img src={aboutimg} alt='' className='w-full bg-cover bg-center' />
         </div>
-        <div id='content-box' className='lg:w-[60%] w-full flex flex-col items-start justify-between gap-[60px]'>
-          <div className='flex flex-col items-start justify-center gap-3'>
+        <div  id='content-box' className='lg:w-[60%] w-full flex flex-col items-start justify-between gap-[60px]'>
+
+          <div data-aos="slide-up" data-aos-delay='80' className='flex flex-col items-start justify-center gap-3'>
             <h1 className='text-black text-[35px] capitalize leading-[1.2em] font-poppins'>Expertaise</h1>
             <p  className='text-gray-500 text-md font-poppins'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             </p>
           </div>
 
-           <div className='flex flex-col items-start justify-center gap-3'>
-            <h1 className='text-black text-[35px] capitalize leading-[1.2em] font-poppins'>Expertaise</h1>
+           <div data-aos="slide-up" data-aos-delay='120' className='flex flex-col items-start justify-center gap-3'>
+            <h1 className='text-black text-[35px] capitalize leading-[1.2em] font-poppins'>Security</h1>
             <p  className='text-gray-500 text-md font-poppins'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             </p>
           </div>
 
-           <div className='flex flex-col items-start justify-center gap-3'>
-            <h1 className='text-black text-[35px] capitalize leading-[1.2em] font-poppins'>Expertaise</h1>
+           <div data-aos="slide-up" data-aos-delay='140' className='flex flex-col items-start justify-center gap-3'>
+            <h1 className='text-black text-[35px] capitalize leading-[1.2em] font-poppins'>Scalability</h1>
             <p  className='text-gray-500 text-md font-poppins'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             </p>
