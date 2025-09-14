@@ -17,5 +17,11 @@ class BasePage:
     def clicar(self, locator):
         self.encontrar_elemento(locator).click()
 
+    def verificar_se_elemento_existe(self, locator):
+        assert self.encontrar_elemento(locator).is_displayed(), f"O elemento '{locator}' nãp foi encontrado na tela"
+
+    def pegar_texto_elemento(self, locator):
+        return self.encontrar_elemento(locator).text
+
 
 

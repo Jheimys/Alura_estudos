@@ -1,32 +1,27 @@
+import time
+
 import pytest
 
-import conftest
-
-from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
+from pages.login_page import LoginPage
 
 
 @pytest.mark.usefixtures("setup_teardown")
 @pytest.mark.login_invalido
 class Test_CT03:
-    def test_ct03_login_invalido(self):
+    def test_ct03_login_invalido(self, setup_teardown):
+        mensagem_erro_esperada = 'Epic sadface: Username and password do not match any user in this service'
 
-        driver = conftest.driver
-        # -----  Preencher campo de usuário ---------
-        driver.find_element(By.ID, "user-name").send_keys('standard_user')
+        login_page = LoginPage()
 
-        # ----------- Colocar senha inválida ---------------
-        driver.find_element(By.ID, 'password').send_keys('123456')
+        login_page.fazer_login('standard_user', 'zzz')
 
-        # ----------- Clicar no btn login ----------------
-        driver.find_element(By.ID, 'login-button').click()
+        login_page.verificar_messagem_error_login_existe()
+
+        login_page.verificar_texto_mensagem_erro_login(mensagem_erro_esperada)
+
+        time.sleep(3)
 
 
-        # Receber a mensagem de erro
-        error_message_ele = driver.find_element(By.XPATH, '//h3[@data-test="error" and contains(text(),"Epic sadface: " )]')
 
-        error_message_text = error_message_ele.text
 
-        expected_error_message = "Epic sadface: Username and password do not match any user in this service"
 
-        assert error_message_text == expected_error_message, f"Mensagem de erro inesperada: {error_message_text}"
