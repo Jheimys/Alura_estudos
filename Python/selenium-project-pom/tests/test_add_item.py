@@ -3,49 +3,43 @@ import pytest
 import conftest
 
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
+from pages.add_itens_page import AddItens
+from pages.login_page import LoginPage
 
 
 @pytest.mark.usefixtures("setup_teardown")
 @pytest.mark.add_item
 class Test_CT02:
     def test_ct02_add_item(self):
+
+        backpack = (By.XPATH, '//div[contains(@class, "inventory_item_name") and contains(text(), "Sauce Labs '
+                              'Backpack")]')
+
+        bike = (By.XPATH, '//div[contains(@class, "inventory_item_name") and contains(text(), "Sauce Labs Bike Light")]')
+
+
         driver = conftest.driver
-        driver.find_element(By.ID, "user-name").send_keys('standard_user')
-        driver.find_element(By.ID, 'password').send_keys('secret_sauce')
-        driver.find_element(By.ID, 'login-button').click()
 
-        wait = WebDriverWait(driver, 10)
+        login_page = LoginPage()
+        add_itens = AddItens()
 
-        item = wait.until(EC.element_to_be_clickable((By.XPATH, '//div[contains(@class, "inventory_item_name") and contains('
-                                                                'text(), "Sauce Labs Backpack")]')))
-        item.click()
+        # Fazer login
+        login_page.fazer_login('standard_user', 'secret_sauce')
 
-        time.sleep(5)
+        # add produto no carrinho
+        add_itens.add_item_cart(backpack)
 
-        # clica no button add to cart
-        btn_add_cart = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[@class="btn_primary btn_inventory"]')))
-        btn_add_cart.click()
 
-        driver.find_element(By.XPATH, '//span[contains(@class, "fa-layers-counter shopping_cart_badge") and contains(text(), '
-                                      '1)]')
+        driver.find_element(By.XPATH, '//span[contains(@class, "fa-layers-counter shopping_cart_badge") and contains(text(), 1)]')
 
 
         # clica no btn Back
-        btn_back = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[@class="inventory_details_back_button"]')))
-        btn_back.click()
-
+        add_itens.clica_btn_back()
 
 
         #add novo item
-        item = wait.until(EC.element_to_be_clickable((By.XPATH, '//div[contains(@class, "inventory_item_name") and contains('
-                                                                'text(), "Sauce Labs Bike Light")]')))
-        item.click()
-
-        # clica no button add to cart
-        btn_add_cart = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[@class="btn_primary btn_inventory"]')))
-        btn_add_cart.click()
+        add_itens.add_item_cart(bike)
 
         #verifica a quantidade no carrinho
         driver.find_element(By.XPATH, '//span[contains(@class, "fa-layers-counter shopping_cart_badge") and contains(text(), '
@@ -53,9 +47,8 @@ class Test_CT02:
 
 
         # clica no button add to checkout
-        btn_add_checkout = wait.until(EC.element_to_be_clickable((By.XPATH, '//a[@class="btn_action checkout_button"]')))
-        btn_add_checkout.click()
+        add_itens.clica_btn_check_out()
 
-        time.sleep(10)
+        time.sleep(5)
 
 

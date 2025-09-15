@@ -1,3 +1,7 @@
+from selenium.webdriver.support import expected_conditions as EC
+
+from selenium.webdriver.support.wait import WebDriverWait
+
 import conftest
 
 
@@ -22,6 +26,12 @@ class BasePage:
 
     def pegar_texto_elemento(self, locator):
         return self.encontrar_elemento(locator).text
+
+
+    def esperar_elemento_ficar_visivel(self, locator, timeout = 10):
+        wait = WebDriverWait(self.driver, timeout)
+        item = wait.until(EC.element_to_be_clickable(locator))
+        return item
 
 
 
