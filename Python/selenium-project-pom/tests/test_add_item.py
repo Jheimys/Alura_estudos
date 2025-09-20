@@ -1,6 +1,5 @@
 import time
 import pytest
-import conftest
 
 from selenium.webdriver.common.by import By
 
@@ -13,42 +12,35 @@ from pages.login_page import LoginPage
 class Test_CT02:
     def test_ct02_add_item(self):
 
-        backpack = (By.XPATH, '//div[contains(@class, "inventory_item_name") and contains(text(), "Sauce Labs '
-                              'Backpack")]')
-
-        bike = (By.XPATH, '//div[contains(@class, "inventory_item_name") and contains(text(), "Sauce Labs Bike Light")]')
-
-
-        driver = conftest.driver
-
         login_page = LoginPage()
         add_itens = AddItens()
 
-        # Fazer login
+        # ---- Fazer login ----
         login_page.fazer_login('standard_user', 'secret_sauce')
 
-        # add produto no carrinho
-        add_itens.add_item_cart(backpack)
+        #--- add produto no carrinho ---
+        add_itens.add_item_cart("Sauce Labs Backpack")
 
-
-        driver.find_element(By.XPATH, '//span[contains(@class, "fa-layers-counter shopping_cart_badge") and contains(text(), 1)]')
-
+        # verifica a quantidade de produtos no carrinho
+        qtd_carrinho = add_itens.get_cart_quantity()
+        print('quatidade em 1:',qtd_carrinho)
 
         # clica no btn Back
         add_itens.clica_btn_back()
 
 
-        #add novo item
-        add_itens.add_item_cart(bike)
+        # add novo item
+        add_itens.add_item_cart("Sauce Labs Bike Light")
 
-        #verifica a quantidade no carrinho
-        driver.find_element(By.XPATH, '//span[contains(@class, "fa-layers-counter shopping_cart_badge") and contains(text(), '
-                                      '2)]').click()
+        #verifica a quantidade de produtos no carrinho
+        qtd_carrinho = add_itens.get_cart_quantity()
+        print('quatidade em 2:', qtd_carrinho)
 
+        add_itens.clicar_no_cart_badge()
 
         # clica no button add to checkout
         add_itens.clica_btn_check_out()
 
-        time.sleep(5)
+        time.sleep(3)
 
 

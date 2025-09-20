@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.support import expected_conditions as EC
 
 from selenium.webdriver.support.wait import WebDriverWait
@@ -34,4 +35,29 @@ class BasePage:
         return item
 
 
+    # 🔥 Novo método: duplo clique
+    def duplo_clique(self, locator):
+        elemento = self.encontrar_elemento(locator)
+        actions = ActionChains(self.driver)
+        actions.double_click(elemento).perform()
 
+
+    # 🔥 Novo método: clique com botão direito
+    def clique_direito(self, locator):
+        elemento = self.encontrar_elemento(locator)
+        actions = ActionChains(self.driver)
+        actions.context_click(elemento).perform()
+
+        # 🔥 Novo método: pressionar tecla
+
+    def pressionar_tecla(self, locator, key):
+        elem = self.encontrar_elemento(locator)
+
+        if key == "ENTER":
+            elem.send_keys(Keys.ENTER)
+        elif key == "ESC":
+            elem.send_keys(Keys.ESCAPE)
+        elif key== "TAB":
+            elem.send_keys(Keys.TAB)
+        else:
+            raise ValueError(f"A tecla '{key}' não está mapeada no método pressionar_tecla")
